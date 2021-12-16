@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -11,5 +13,14 @@ module.exports = {
         trackingId: "3105184031",
       },
     },
+    {
+      resolve: "gatsby-plugin-alias-imports",
+      options: {
+        alias: {
+          "@components": path.resolve(__dirname, 'src/components')
+        },
+        extensions: ['js']
+      }
+    }
   ],
 };
